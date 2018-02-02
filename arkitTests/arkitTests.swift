@@ -7,30 +7,28 @@
 //
 
 import XCTest
-@testable import arkit
+import CoreLocation
 
 class arkitTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testToRadians() {
+        let math = Float(1.0).toRadians()
+        XCTAssertEqual(math, Float(0.01745329252), accuracy: 0.00000000001)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testBearingBetweenLocations() {
+        let brazil = CLLocation(latitude: -23.6553654, longitude: -46.6685875)
+        let norway = CLLocation(latitude: 59.8937806, longitude: 10.6450365)
+        let result = ARHelper.bearingBetweenLocations(norway, brazil)
+        XCTAssertEqual(result, -2.2553121453851719, accuracy: 0.0000000000000001)
     }
     
 }

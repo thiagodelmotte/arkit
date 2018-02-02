@@ -46,5 +46,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Needed to receive your current location for AR.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Needed to activate AR.</string>
 </dict>
 </plist>

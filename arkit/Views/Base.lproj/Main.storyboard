@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="blr-Mh-iuo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController storyboardIdentifier="ARViewController" id="BV1-FR-VrT" customClass="ARViewController" customModule="arkit_delmotte" customModuleProvider="target" sceneMemberID="viewController">
+                    <arscnView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="BrB-h1-WRS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </arscnView>
+                    <connections>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="rTL-JA-gb5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-248" y="34"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="UgU-uY-cDb">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="blr-Mh-iuo" customClass="MapViewController" customModule="arkit_delmotte" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1eE-5Z-vob">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rcr-fT-lal">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <connections>
+                                    <outlet property="delegate" destination="blr-Mh-iuo" id="huL-Y3-PTU"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6bP-Aa-ywi">
+                                <rect key="frame" x="301" y="593" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Jud-K7-NGa"/>
+                                    <constraint firstAttribute="width" constant="44" id="SNC-Tu-I10"/>
+                                </constraints>
+                                <state key="normal" image="findMe"/>
+                                <connections>
+                                    <action selector="findMe" destination="blr-Mh-iuo" eventType="touchUpInside" id="enH-rM-p4j"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Rcr-fT-lal" firstAttribute="top" secondItem="sgn-6e-Mvb" secondAttribute="top" id="0Wl-dm-CyF"/>
+                            <constraint firstItem="Rcr-fT-lal" firstAttribute="bottom" secondItem="sgn-6e-Mvb" secondAttribute="bottom" id="6fj-lD-1J7"/>
+                            <constraint firstItem="Rcr-fT-lal" firstAttribute="leading" secondItem="sgn-6e-Mvb" secondAttribute="leading" id="HGt-tx-w37"/>
+                            <constraint firstItem="sgn-6e-Mvb" firstAttribute="bottom" secondItem="6bP-Aa-ywi" secondAttribute="bottom" constant="30" id="WBp-6j-Mem"/>
+                            <constraint firstItem="sgn-6e-Mvb" firstAttribute="trailing" secondItem="6bP-Aa-ywi" secondAttribute="trailing" constant="30" id="iIO-e8-h9E"/>
+                            <constraint firstItem="Rcr-fT-lal" firstAttribute="trailing" secondItem="sgn-6e-Mvb" secondAttribute="trailing" id="tst-ak-4jU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="sgn-6e-Mvb"/>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="Rcr-fT-lal" id="FZG-CT-hCH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXt-SI-7GZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-959" y="34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="findMe" width="64" height="64"/>
+    </resources>
+</document>

@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:arkit.xcodeproj">
+      location = "self:/Users/thiago/Files/AppleiOS/Projetos/arkit/arkit-delmotte.xcodeproj">
    </FileRef>
 </Workspace>
